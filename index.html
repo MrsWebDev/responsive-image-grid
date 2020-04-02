@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Responsive Image Grid">
+    <meta name="keywords" content="HTML,CSS,Grid">
+    <meta name="author" content="Liliia Shashina">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Image Grid</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&display=swap" rel="stylesheet">
+  </head>
+
+<body id="wrapper">
+
+  <!-- Header -->
+  <div id="header">
+    <h1>Responsive Image Grid</h1>
+    <p>Resize the browser window to see the responsive effect.</p>
+
+    <center>
+      <p>Also you can choose different options for the columns on Grid:</p>
+      <button class="button active" onclick="change_cln_narrow();">Narrow columns</button>
+      <button class="button" onclick="change_cln_middle();">Middle columns</button>
+      <button class="button" onclick="change_cln_wide();">Wide columns</button>
+    </center>
+  </div>
+  <!-- End Header -->
+
+  <!-- Photo Grid -->
+  <div id="row"> 
+
+    <!-- 1st column -->
+    <div class="column">
+      <img src="images/img-1.jpg">
+      <img src="images/img-4.jpg">
+      <img src="images/img-7.jpg">
+      <img src="images/img-10.jpg">
+      <img src="images/img-13.jpg">
+      <img src="images/img-16.jpg">
+      <img src="images/img-19.jpg">
+      <img src="images/img-22.jpg">
+      <img src="images/img-25.jpg">
+    </div>
+
+    <!-- 2nd column -->
+    <div class="column">
+      <img src="images/img-2.jpg">
+      <img src="images/img-5.jpg">
+      <img src="images/img-8.jpg">
+      <img src="images/img-11.jpg">
+      <img src="images/img-14.jpg">
+      <img src="images/img-17.jpg">
+      <img src="images/img-20.jpg">
+      <img src="images/img-23.jpg">
+      <!-- <img src="images/img-26.jpg"> -->
+    </div> 
+      
+    <!-- 3rd column -->
+    <div class="column">
+      <img src="images/img-3.jpg">
+      <img src="images/img-6.jpg">
+      <img src="images/img-9.jpg">
+      <img src="images/img-12.jpg">
+      <img src="images/img-15.jpg">
+      <img src="images/img-18.jpg">
+      <img src="images/img-21.jpg">
+      <img src="images/img-24.jpg">
+      <img src="images/img-27.jpg">
+    </div>
+  </div>
+  <!-- End Photo Grid -->
+
+  <!-- Footer -->
+  <div id="footer">
+    <p>&copy; 2020 Liliia Shashina</p>
+    <p>Photos from <a href="https://unsplash.com/">Unsplash</a></p>
+    <p>Created by <a href="mailto:liliia.shashina@gmail.com">Liliia Shashina</a></p>
+  </div>
+  <!-- End Footer -->
+
+  <script>
+    // declare a loop variable i
+    var i;
+
+    function change_cln_narrow() {
+      document.getElementById("row").style.padding = "0 2px";
+
+      var cln_wide = document.getElementsByClassName("column");
+      for (i = 0; i < cln_wide.length; i++) {
+        cln_wide[i].style.padding = "0 2px";
+      }
+
+      var cln_img = document.getElementsByTagName("img");
+      for (i = 0; i < cln_img.length; i++) {
+        cln_img[i].style.marginTop = "4px";
+      } 
+    }
+
+    function change_cln_middle() {
+      document.getElementById("row").style.padding = "0 10px";
+
+      var cln_wide = document.getElementsByClassName("column");
+      for (i = 0; i < cln_wide.length; i++) {
+        cln_wide[i].style.padding = "0 10px";
+      }
+
+      var cln_img = document.getElementsByTagName("img");
+      for (i = 0; i < cln_img.length; i++) {
+        cln_img[i].style.marginTop = "20px";
+      } 
+    }
+
+    function change_cln_wide() {
+      document.getElementById("row").style.padding = "0 20px";
+
+      var cln_wide = document.getElementsByClassName("column");
+      for (i = 0; i < cln_wide.length; i++) {
+        cln_wide[i].style.padding = "0 20px";
+      }
+
+      var cln_img = document.getElementsByTagName("img");
+      for (i = 0; i < cln_img.length; i++) {
+        cln_img[i].style.marginTop = "40px";
+      } 
+    }
+
+    // Add .active class to the current button
+    var header = document.getElementById("header");
+    var buttons = header.getElementsByClassName("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function() {
+        var active = document.getElementsByClassName("active");
+        active[0].className = active[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+</body>
+</html>
