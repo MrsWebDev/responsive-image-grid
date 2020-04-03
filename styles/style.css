@@ -42,20 +42,30 @@
 }
 
 #row {
+  padding: 0 2px;
+
+  display: -webkit-flex;   /* Chrome 21.0+ & Safari 6.1+ */
+  display: -moz-flex;      /* Mozilla 18.0+ */
+  display: -ms-flexbox;    /* IE 10+ */
   display: flex;
-  display: -ms-flexbox; /* IE 10 */
-  flex-wrap: wrap;
-  -ms-flex-wrap: wrap; /* IE 10 */
-  padding: 0 2px; 
+
+  -webkit-flex-wrap: wrap; /* Chrome 21.0+ & Safari 6.1+ */
+     -moz-flex-wrap: wrap; /* Mozilla 18.0+ */
+      -ms-flex-wrap: wrap; /* IE 10+ */
+          flex-wrap: wrap;
 }
 
 .column {
-  /* Create 3 equal columns that sits next to each other */
-  flex: 33.33%;
-  -ms-flex: 33.33%; /* IE 10 */
-  max-width: calc(100% / 3);
+  /* if flex is not supported by browser */
+  max-width: calc(100% / 3); 
   padding: 0 2px;
-}
+
+  /* 3 equal columns */
+  -webkit-flex: 33.33%;    /* Chrome 21.0+ & Safari 6.1+ */
+     -moz-flex: 33.33%;    /* Mozilla 18.0+ */
+      -ms-flex: 33.33%;    /* IE 10+ */
+          flex: 33.33%;     
+} 
 
 .column img {
   margin-top: 4px;
