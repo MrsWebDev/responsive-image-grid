@@ -43,13 +43,16 @@
 
 #row {
   display: flex;
+  display: -ms-flexbox; /* IE 10 */
   flex-wrap: wrap;
+  -ms-flex-wrap: wrap; /* IE 10 */
   padding: 0 2px; 
 }
 
 .column {
   /* Create 3 equal columns that sits next to each other */
   flex: 33.33%;
+  -ms-flex: 33.33%; /* IE 10 */
   max-width: calc(100% / 3);
   padding: 0 2px;
 }
@@ -78,7 +81,7 @@ img:hover {
 
 /* Responsive layout: Tablet */
 @media screen and (max-width: 768px) {
-  
+
   #wrapper {
     margin: 0 5%;
     width: 90%;
